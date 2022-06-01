@@ -1,0 +1,230 @@
+fieldset {
+  --padding-vertical: 1rem;
+  --padding-horizontal: 0;
+
+  padding: var(--padding-vertical) var(--padding-horizontal);
+
+  border: none;
+  border-top: 2px solid var(--palette-primary);
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  legend {
+    --padding-vertical: 0;
+    --padding-horizontal: 0.5rem;
+
+    padding: var(--padding-vertical) var(--padding-horizontal);
+
+    font-size: larger;
+    text-align: center;
+  }
+}
+
+input,
+textarea,
+select {
+  --padding-vertical: 0.75rem;
+  --padding-horizontal: 1rem;
+  --margin-horizontal: 0;
+  --margin-vertical: 1rem;
+
+  border-radius: 0.25rem;
+  border: 1px solid var(--palette-border);
+
+  display: block;
+  box-sizing: border-box;
+
+  font-weight: normal;
+  font-size: var(--font-size);
+  font-family: var(--font-face);
+
+  padding: var(--padding-vertical) var(--padding-horizontal);
+  margin: var(--margin-vertical) var(--margin-horizontal);
+
+  color: var(--palette-foreground);
+  background: none;
+
+  transition: all 0.2s ease-in-out;
+
+  width: 100%;
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    border-color: var(--palette-primary);
+  }
+}
+
+input {
+  &[type='file'] {
+    --padding-vertical: 0;
+    --padding-horizontal: 0;
+
+    border-color: transparent;
+
+    &::-webkit-file-upload-button {
+      --margin-horizontal: 0.5rem;
+
+      &:extend(button);
+
+      font-size: smaller;
+
+      margin-right: var(--margin-horizontal);
+
+      background: none;
+      border: 1px solid var(--palette-border);
+
+      &:hover {
+        background-color: var(--button-hover);
+      }
+    }
+
+    &:focus,
+    &:focus-visible {
+      &::-webkit-file-upload-button {
+        border-color: var(--palette-primary);
+      }
+    }
+  }
+
+  &[type='checkbox'],
+  &[type='radio'] {
+    --padding-vertical: 0;
+    --padding-horizontal: 0;
+
+    --margin-vertical: 0.35rem;
+
+    appearance: none;
+    display: inline-block;
+
+    vertical-align: middle;
+
+    width: 1rem;
+    height: 1rem;
+
+    background-color: var(--white);
+
+    &:checked {
+      color: var(--palette-primary-contrast);
+      background-color: var(--palette-primary);
+
+      position: relative;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        text-align: center;
+
+        font-size: 0.75rem;
+        line-height: 0.85rem;
+      }
+    }
+
+    cursor: pointer;
+  }
+
+  &[type='checkbox'] {
+    &:checked {
+      &::after {
+        content: '✔';
+      }
+    }
+  }
+
+  &[type='radio'] {
+    border-radius: 100%;
+
+    &:checked {
+      &::after {
+        content: '•';
+
+        font-size: 2rem;
+        line-height: 0.85rem;
+      }
+    }
+  }
+
+  &[type='color'] {
+    height: calc(1.5rem + 2px + 2 * var(--padding-vertical));
+
+    cursor: pointer;
+
+    &::-webkit-color-swatch {
+      border: none;
+      border-radius: 0.125rem;
+    }
+
+    &::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+  }
+
+  &[type='range'] {
+    --padding-horizontal: 0;
+
+    border-color: transparent;
+
+    appearance: none;
+
+    height: 1rem;
+
+    &::-webkit-slider-runnable-track {
+      height: 0.25rem;
+
+      border-radius: 0.125rem;
+      background-color: var(--palette-border);
+    }
+
+    &::-webkit-slider-thumb {
+      appearance: none;
+
+      width: 1rem;
+      height: 1rem;
+
+      margin-top: -0.4rem;
+
+      border-radius: 0.5rem;
+
+      border: 2px solid var(--palette-primary-dark);
+      background-color: var(--palette-primary);
+
+      cursor: pointer;
+    }
+
+    &:focus,
+    &:focus-visible {
+      &::-webkit-slider-runnable-track {
+        background-color: var(--palette-primary-light);
+      }
+    }
+  }
+}
+
+select {
+  border-radius: 0.25rem;
+  border: 1px solid var(--palette-border);
+
+  &:not([multiple]) {
+    optgroup,
+    option {
+      background-color: var(--palette-background-light);
+    }
+  }
+}
+
+textarea {
+  resize: vertical;
+
+  border-radius: 0.25rem;
+  border: 1px solid var(--palette-border);
+}
+
+[aria-invalid='true'] {
+  outline-color: brown;
+}

@@ -1,0 +1,12 @@
+{
+  "include": ["src", "vite.config.ts"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["dom"],
+    "jsx": "react-jsx",
+    "strict": true
+  }
+}

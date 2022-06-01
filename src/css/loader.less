@@ -1,0 +1,61 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader() {
+  display: inline-block;
+  vertical-align: middle;
+
+  width: 1em;
+  height: 1em;
+
+  border-radius: 50%;
+  border: 0.125em solid currentColor;
+  border-right-color: transparent;
+
+  box-sizing: border-box;
+
+  animation: spin 0.75s linear infinite;
+
+  pointer-events: none;
+
+  opacity: 0.7;
+}
+
+button[aria-busy='true']::before,
+[role='button'][aria-busy='true']::before {
+  content: '';
+
+  .loader;
+
+  margin-top: -0.25em;
+  margin-right: 0.25em;
+}
+
+:not(button):not([rol='button'])[aria-busy='true'] {
+  text-align: center;
+}
+
+input:not([type='file']):not([type='range'])[aria-busy='true'],
+select[aria-busy='true'] {
+  --padding-vertical: 0;
+  --padding-horizontal: 0;
+
+  --margin-vertical: 33px;
+  --margin-horizontal: auto;
+
+  .loader;
+
+  display: block;
+
+  border-left-color: var(--palette-foreground);
+  border-top-color: var(--palette-foreground);
+  border-bottom-color: var(--palette-foreground);
+
+  color: transparent;
+}

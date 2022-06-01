@@ -1,0 +1,56 @@
+:root {
+  color-scheme: light dark;
+
+  --white-light: #fcfdff;
+  --white: #ecedef;
+  --white-dark: #dcdddf;
+
+  --black-light: #303133;
+  --black: #202123;
+  --black-dark: #101113;
+
+  --palette-primary-light: #63a4ff;
+  --palette-primary: #1976d2;
+  --palette-primary-dark: #004ba0;
+
+  --palette-primary-contrast: #ecedef;
+
+  --palette-border: #aaaaaa;
+
+  --font-size: 16px;
+  --font-face: 'Noto Sans', sans-serif;
+
+  --padding-vertical: 0.5rem;
+  --padding-horizontal: 0.75rem;
+
+  --margin-vertical: 0.25rem;
+  --margin-horizontal: 0.5rem;
+
+  --elevation: 0 1px 4px 1px rgb(0 0 0 / 18%);
+
+  --max-body-width: 100%;
+
+  @media (prefers-color-scheme: dark) {
+    --palette-foreground-light: var(--white-light);
+    --palette-foreground: var(--white);
+    --palette-foreground-dark: var(--white-dark);
+
+    --palette-background-light: var(--black-light);
+    --palette-background: var(--black);
+    --palette-background-dark: var(--black-dark);
+
+    --button-hover: var(--black-light);
+  }
+
+  @media (prefers-color-scheme: light) {
+    --palette-foreground-light: var(--black-light);
+    --palette-foreground: var(--black);
+    --palette-foreground-dark: var(--black-dark);
+
+    --palette-background-light: var(--white-light);
+    --palette-background: var(--white);
+    --palette-background-dark: var(--white-dark);
+
+    --button-hover: var(--white-dark);
+  }
+}
