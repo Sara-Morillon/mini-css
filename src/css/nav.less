@@ -54,9 +54,13 @@ nav[aria-label='Main'] {
     border-radius: 0;
   }
 
-  & > a:hover,
-  & > button:hover {
-    background-color: var(--palette-primary-dark);
+  & > a,
+  & > button {
+    &:hover,
+    &:focus-visible {
+      outline: none;
+      background-color: var(--palette-primary-dark);
+    }
   }
 
   & > [aria-current='page'] {
