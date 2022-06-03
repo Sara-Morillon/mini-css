@@ -41,7 +41,7 @@
 label[aria-busy='true'] {
   position: relative;
 
-  & > input,
+  & > input:not([type='checkbox']):not([type='radio']),
   & > select {
     appearance: none;
 
@@ -53,5 +53,20 @@ label[aria-busy='true'] {
 
     bottom: 1rem;
     right: 1rem;
+  }
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  position: relative;
+
+  background: none;
+  border: none;
+
+  &::after {
+    position: absolute;
+
+    top: 0;
+    left: 0;
   }
 }

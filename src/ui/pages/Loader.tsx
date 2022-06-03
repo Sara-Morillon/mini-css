@@ -25,6 +25,14 @@ export function Loader() {
           <option>Option</option>
         </select>
       </label>
+      <h2>Loading checkbox</h2>
+      <label>
+        <input type="checkbox" aria-busy disabled /> Coucou
+      </label>
+      <h2>Loading radio button</h2>
+      <label>
+        <input type="radio" aria-busy disabled /> Coucou
+      </label>
     </section>
   )
 }
