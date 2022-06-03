@@ -1,26 +1,29 @@
 a {
   color: var(--palette-primary);
+  text-decoration: none;
 
   transition: all 0.1s ease-in-out;
 
   &:hover {
-    color: var(--palette-primary-dark);
+    text-decoration: underline;
   }
 }
 
 code {
+  --padding-vertical: 0;
   --padding-horizontal: 0.5rem;
 
-  padding: 0 var(--padding-horizontal);
+  padding: var(--padding-vertical) var(--padding-horizontal);
 
-  background-color: var(--palette-background-light);
+  background-color: var(--palette-background-dark);
 }
 
 blockquote {
+  --padding-vertical: 0;
   --padding-horizontal: 1.5rem;
 
   margin: 0;
-  padding: 0 var(--padding-horizontal);
+  padding: var(--padding-vertical) var(--padding-horizontal);
 
   border-left: 4px solid var(--palette-border);
 
