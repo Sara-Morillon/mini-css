@@ -5,6 +5,7 @@ import { Form } from './pages/Form'
 import { Layout } from './pages/Layout'
 import { Loader } from './pages/Loader'
 import { Nav } from './pages/Nav'
+import { Table } from './pages/Table'
 import { Typography } from './pages/Typography'
 
 export function App() {
@@ -20,6 +21,7 @@ export function App() {
         <NavLink to="/layout">Layout</NavLink>
         <NavLink to="/loader">Loader</NavLink>
         <NavLink to="/dialog">Dialog</NavLink>
+        <NavLink to="/table">Table</NavLink>
       </nav>
       <header>
         <h1>Mini CSS</h1>
@@ -33,6 +35,7 @@ export function App() {
           <Route path="/layout" element={<Layout />} />
           <Route path="/loader" element={<Loader />} />
           <Route path="/dialog" element={<Dialog />} />
+          <Route path="/table" element={<Table />} />
         </Routes>
       </main>
       <footer>Sara Morillon &copy; {new Date().getFullYear()}</footer>

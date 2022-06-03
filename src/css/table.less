@@ -1,0 +1,63 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  caption {
+    --padding-vertical: 0.5rem;
+    --padding-horizontal: 1rem;
+
+    padding: var(--padding-vertical) var(--padding-horizontal);
+
+    font-weight: bold;
+  }
+
+  th,
+  td {
+    --padding-vertical: 0.5rem;
+    --padding-horizontal: 1rem;
+
+    padding: var(--padding-vertical) var(--padding-horizontal);
+
+    text-align: left;
+  }
+
+  thead th {
+    input,
+    select {
+      --margin-vertical: 0;
+      --margin-horizontal: 0;
+
+      --padding-vertical: 0.25rem;
+      --padding-horizontal: 0.5rem;
+
+      font-size: small;
+
+      &:not([type='checkbox']):not([type='radio']) {
+        border-color: transparent;
+        background-color: var(--palette-background-dark);
+      }
+    }
+
+    label {
+      font-size: small;
+      font-weight: normal;
+    }
+  }
+
+  thead tr:last-of-type {
+    border-bottom: 2px solid var(--palette-border);
+  }
+
+  tfoot tr:first-of-type {
+    border-top: 2px solid var(--palette-border);
+  }
+
+  tbody tr {
+    border-top: 1px solid var(--palette-border);
+    border-bottom: 1px solid var(--palette-border);
+  }
+
+  tbody tr:nth-of-type(even) {
+    background-color: var(--palette-background-dark);
+  }
+}
