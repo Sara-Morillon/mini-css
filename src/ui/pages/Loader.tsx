@@ -1,34 +1,30 @@
 export function Loader() {
   return (
     <section>
+      <h2>Simple loader</h2>
+      <div>
+        <span aria-busy />
+      </div>
       <h2>Loading button</h2>
+      <button aria-busy>Send</button>
       <strong>
         <button aria-busy>Send</button>
       </strong>
+      <h2>Loading article</h2>
+      <article aria-busy />
       <h2>Loading container</h2>
-      <article aria-busy></article>
+      <div aria-busy />
       <h2>Loading input</h2>
-      <input aria-busy value="Text" />
-      <div style={{ display: 'flex' }}>
-        <select aria-busy>
-          <optgroup label="Group 1">
-            <option>Option 1</option>
-            <option>Option 2</option>
-          </optgroup>
-          <optgroup label="Group 2">
-            <option>Option 3</option>
-          </optgroup>
+      <label aria-busy>
+        Coucou <input disabled />
+      </label>
+      <h2>Loading select</h2>
+      <label aria-busy>
+        Coucou
+        <select disabled>
+          <option>Option</option>
         </select>
-        <select>
-          <optgroup label="Group 1">
-            <option>Option 1</option>
-            <option>Option 2</option>
-          </optgroup>
-          <optgroup label="Group 2">
-            <option>Option 3</option>
-          </optgroup>
-        </select>
-      </div>
+      </label>
     </section>
   )
 }
