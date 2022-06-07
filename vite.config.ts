@@ -6,7 +6,7 @@ config()
 
 export default defineConfig({
   plugins: [react()],
-  server: { port: 3001 },
+  server: { port: 4001 },
   build: {
     outDir: process.env.OUTDIR,
     emptyOutDir: false,
