@@ -9,8 +9,11 @@ footer {
 }
 
 header {
-  color: var(--palette-primary-contrast);
-  background-color: var(--palette-primary-dark);
+  --header-background: var(--palette-background-dark);
+  --header-foreground: var(--palette-foreground);
+
+  color: var(--header-foreground);
+  background-color: var(--header-background);
 }
 
 main {
@@ -21,6 +24,14 @@ main {
 }
 
 article {
+  @media (prefers-color-scheme: dark) {
+    --article-background: lighten(@black, 5%);
+  }
+
+  @media (prefers-color-scheme: light) {
+    --article-background: lighten(@white, 5%);
+  }
+
   --padding-vertical: 1.5rem;
   --padding-horizontal: 1.5rem;
 
@@ -28,6 +39,8 @@ article {
 
   padding: var(--padding-vertical) var(--padding-horizontal);
   margin-bottom: var(--margin-vertical);
+
+  background-color: var(--article-background);
 
   box-shadow: var(--elevation);
 

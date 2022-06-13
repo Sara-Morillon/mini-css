@@ -1,4 +1,12 @@
 table {
+  @media (prefers-color-scheme: dark) {
+    --table-strip: fade(@white, 2%);
+  }
+
+  @media (prefers-color-scheme: light) {
+    --table-strip: fade(@black, 5%);
+  }
+
   width: 100%;
   border-collapse: collapse;
 
@@ -19,6 +27,8 @@ table {
     padding: var(--padding-vertical) var(--padding-horizontal);
 
     text-align: left;
+
+    font-weight: normal;
   }
 
   thead th {
@@ -34,7 +44,6 @@ table {
 
       &:not([type='checkbox']):not([type='radio']) {
         border-color: transparent;
-        background-color: var(--palette-background-dark);
       }
     }
 
@@ -58,6 +67,6 @@ table {
   }
 
   tbody tr:nth-of-type(even) {
-    background-color: var(--palette-background-dark);
+    background-color: var(--table-strip);
   }
 }

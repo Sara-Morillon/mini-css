@@ -2,140 +2,142 @@ export function Form() {
   return (
     <section>
       <h2>Form</h2>
-      <form>
-        <fieldset>
-          <legend>Text inputs</legend>
 
-          <label>
-            Text <input type="text" placeholder="Text" />
-          </label>
-          <label>
-            Number <input type="number" placeholder="Number" />
-          </label>
-          <label>
-            Password <input type="password" placeholder="Password" />
-          </label>
+      <h3>Text inputs</h3>
 
-          <label>
-            Email <input type="email" placeholder="Email" />
-          </label>
-          <label>
-            Tel <input type="tel" placeholder="Tel" />
-          </label>
-          <label>
-            Url <input type="url" placeholder="Url" />
-          </label>
-          <label>
-            Search <input type="search" placeholder="Search" />
-          </label>
+      <label>
+        Text <input type="text" placeholder="Text" />
+      </label>
 
-          <label>
-            Textarea <textarea placeholder="Textarea"></textarea>
-          </label>
-        </fieldset>
+      <label>
+        Number <input type="number" placeholder="Number" />
+      </label>
 
-        <fieldset>
-          <legend>Date inputs</legend>
+      <label>
+        Password <input type="password" placeholder="Password" />
+      </label>
 
-          <label>
-            Date <input type="date" />
-          </label>
-          <label>
-            Date time <input type="datetime-local" />
-          </label>
-          <label>
-            Time <input type="time" />
-          </label>
-          <label>
-            Month <input type="month" />
-          </label>
-          <label>
-            Week <input type="week" />
-          </label>
-        </fieldset>
+      <label>
+        Email <input type="email" placeholder="Email" />
+      </label>
 
-        <fieldset>
-          <legend>File input</legend>
+      <label>
+        Tel <input type="tel" placeholder="Tel" />
+      </label>
 
-          <label>
-            File <input type="file" />
-          </label>
-        </fieldset>
+      <label>
+        Url <input type="url" placeholder="Url" />
+      </label>
 
-        <fieldset>
-          <legend>Radio buttons</legend>
+      <label>
+        Search <input type="search" placeholder="Search" />
+      </label>
 
-          <label>
-            <input type="radio" name="group" /> Radio button 1
-          </label>
-          <br />
-          <label>
-            <input type="radio" name="group" /> Radio button 2
-          </label>
-          <br />
-          <label>
-            <input type="radio" name="group" /> Radio button 3
-          </label>
-          <br />
-        </fieldset>
+      <label>
+        Textarea <textarea placeholder="Textarea"></textarea>
+      </label>
 
-        <fieldset>
-          <legend>Checkboxes</legend>
+      <h3>Date inputs</h3>
 
-          <label>
-            <input type="checkbox" /> Checkbox 1
-          </label>
-          <br />
-          <label>
-            <input type="checkbox" /> Checkbox 2
-          </label>
-          <br />
-          <label>
-            <input type="checkbox" /> Checkbox 3
-          </label>
-        </fieldset>
+      <label>
+        Date <input type="date" />
+      </label>
 
-        <fieldset>
-          <legend>Select</legend>
+      <label>
+        Date time <input type="datetime-local" />
+      </label>
 
-          <label>
-            Select
-            <select>
-              <optgroup label="Group 1">
-                <option>Option 1</option>
-                <option>Option 2</option>
-              </optgroup>
-              <optgroup label="Group 2">
-                <option>Option 3</option>
-              </optgroup>
-            </select>
-          </label>
+      <label>
+        Time <input type="time" />
+      </label>
 
-          <label>
-            Select multiple
-            <select multiple>
-              <optgroup label="Group 1">
-                <option>Option 1</option>
-                <option>Option 2</option>
-              </optgroup>
-              <optgroup label="Group 2">
-                <option>Option 3</option>
-              </optgroup>
-            </select>
-          </label>
-        </fieldset>
+      <label>
+        Month <input type="month" />
+      </label>
 
-        <fieldset>
-          <legend>Other</legend>
+      <label>
+        Week <input type="week" />
+      </label>
 
-          <label>
-            Color <input type="color" />
-          </label>
-          <label>
-            Range <input type="range" />
-          </label>
-        </fieldset>
-      </form>
+      <h3>File input</h3>
+
+      <label>
+        File <input type="file" />
+      </label>
+
+      <h3>Radio buttons</h3>
+
+      <fieldset>
+        <legend>Some label</legend>
+
+        <label>
+          <input type="radio" name="group" /> Radio button 1
+        </label>
+        <label>
+          <input type="radio" name="group" /> Radio button 2
+        </label>
+        <label>
+          <input type="radio" name="group" /> Radio button 3
+        </label>
+      </fieldset>
+
+      <h3>Checkboxes</h3>
+
+      <fieldset>
+        <legend>Some label</legend>
+
+        <label>
+          <input type="checkbox" /> Checkbox 1
+        </label>
+        <label>
+          <input type="checkbox" /> Checkbox 2
+        </label>
+        <label>
+          <input type="checkbox" /> Checkbox 3
+        </label>
+      </fieldset>
+
+      <h3>Select</h3>
+
+      <label>
+        Select
+        <select>
+          <optgroup label="Group 1">
+            <option>Option 1</option>
+            <option>Option 2</option>
+          </optgroup>
+          <optgroup label="Group 2">
+            <option>Option 3</option>
+          </optgroup>
+        </select>
+      </label>
+
+      <label>
+        Select multiple
+        <select multiple>
+          <optgroup label="Group 1">
+            <option>Option 1</option>
+            <option>Option 2</option>
+          </optgroup>
+          <optgroup label="Group 2">
+            <option>Option 3</option>
+          </optgroup>
+        </select>
+      </label>
+
+      <h3>Other</h3>
+
+      <label>
+        Color <input type="color" />
+      </label>
+
+      <label>
+        Range <input type="range" />
+      </label>
+
+      <h3>Progress bar</h3>
+
+      <progress value={5} max={10} />
     </section>
   )
 }

@@ -32,39 +32,63 @@ aside > nav,
 /* TOP NAVIGATION */
 
 nav[aria-label='Main'] {
+  @media (prefers-color-scheme: dark) {
+    --navbar-background: var(--palette-background);
+    --navbar-foreground: var(--palette-foreground);
+    --navbar-border: var(--palette-background-dark);
+    --navbar-divider: var(--palette-background-dark);
+    --navbar-item-hover: var(--palette-background-light);
+    --navbar-item-active: var(--palette-background-light);
+  }
+
+  @media (prefers-color-scheme: light) {
+    --navbar-background: var(--palette-primary);
+    --navbar-foreground: var(--palette-primary-contrast);
+    --navbar-border: var(--palette-primary-light);
+    --navbar-divider: var(--palette-primary-dark);
+    --navbar-item-hover: var(--palette-primary-dark);
+    --navbar-item-active: var(--palette-primary-dark);
+  }
+
   display: flex;
   align-items: center;
 
-  background-color: var(--palette-primary);
+  background-color: var(--navbar-background);
 
-  border-bottom: 1px solid var(--palette-primary-light);
+  border-bottom: 1px solid var(--navbar-border);
 
   & > hr {
-    border-color: var(--palette-primary-dark);
+    border-color: var(--navbar-divider);
   }
 
   & > :not(hr) {
     --padding-vertical: 1rem;
     --padding-horizontal: 1rem;
 
-    color: var(--palette-primary-contrast);
+    color: var(--navbar-foreground);
   }
 
   & > button {
     border-radius: 0;
   }
 
-  & > a,
-  & > button {
+  & > a[aria-disabled='true'],
+  & > button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  & > a:not([aria-disabled='true']),
+  & > button:not(:disabled) {
     &:hover,
     &:focus-visible {
       outline: none;
-      background-color: var(--palette-primary-dark);
+      background-color: var(--navbar-item-hover);
     }
   }
 
   & > [aria-current='page'] {
-    background-color: var(--palette-primary-dark);
+    background-color: var(--navbar-item-active);
   }
 
   & > hr {
@@ -75,14 +99,26 @@ nav[aria-label='Main'] {
 /* SIDE NAVIGATION */
 
 aside > nav {
+  --nav-foreground: var(--palette-foreground);
+  --nav-border: var(--palette-background-dark);
+  --nav-divider: var(--palette-background-dark);
+
+  @media (prefers-color-scheme: dark) {
+    --nav-item-hover: var(--palette-background-light);
+  }
+
+  @media (prefers-color-scheme: light) {
+    --nav-item-hover: var(--palette-background-dark);
+  }
+
   display: inline-flex;
   flex-direction: column;
   align-items: stretch;
 
-  border-right: 1px solid var(--palette-border);
+  border-right: 1px solid var(--nav-border);
 
   & > hr {
-    border-color: var(--palette-background-dark);
+    border-color: var(--nav-divider);
   }
 
   & > :not(hr) {
@@ -90,10 +126,23 @@ aside > nav {
     --padding-horizontal: 1rem;
   }
 
-  & > a:hover,
-  & > button:hover {
-    color: var(--palette-foreground);
-    background-color: var(--button-hover);
+  & > a,
+  & > a:hover {
+    text-decoration: none;
+  }
+
+  & > a[aria-disabled='true'],
+  & > button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  & > a:not([aria-disabled='true']),
+  & > button:not(:disabled) {
+    &:hover {
+      color: var(--nav-foreground);
+      background-color: var(--nav-item-hover);
+    }
   }
 
   & > hr {
@@ -110,6 +159,20 @@ aside > nav {
 /* TABS */
 
 [role='tablist'] {
+  --tab-border-active: var(--palette-primary);
+
+  @media (prefers-color-scheme: dark) {
+    --tab-border: var(--palette-background-light);
+    --tab-item-hover: var(--palette-background-light);
+    --tab-item-active: var(--palette-background-light);
+  }
+
+  @media (prefers-color-scheme: light) {
+    --tab-border: var(--palette-background-dark);
+    --tab-item-hover: var(--palette-background-dark);
+    --tab-item-active: var(--palette-background-dark);
+  }
+
   --margin-horizontal: 1rem;
 
   display: flex;
@@ -117,7 +180,7 @@ aside > nav {
 
   margin-bottom: var(--margin-horizontal);
 
-  border-bottom: 2px solid var(--palette-border);
+  border-bottom: 2px solid var(--tab-border);
 
   & > [role='tab'] {
     --padding-vertical: 0.75rem;
@@ -127,15 +190,20 @@ aside > nav {
 
     border-bottom: 2px solid transparent;
 
-    &:hover {
+    &:hover:not([aria-disabled='true']) {
       background: none;
-      color: var(--palette-primary);
+      background-color: var(--tab-item-hover);
     }
 
     &[aria-selected='true'] {
-      color: var(--palette-primary);
+      background-color: var(--tab-item-active);
 
-      border-color: var(--palette-primary);
+      border-color: var(--tab-border-active);
+    }
+
+    &[aria-disabled='true'] {
+      opacity: 0.7;
+      cursor: not-allowed;
     }
   }
 
@@ -151,6 +219,17 @@ aside > nav {
 /* BREADCRUMB */
 
 nav[aria-label='Breadcrumb'] > ul {
+  --breadcrumb-item: var(--palette-foreground);
+  --breadcrumb-item-hover: var(--palette-foreground-light);
+
+  @media (prefers-color-scheme: dark) {
+    --breadcrumb-item-active: fade(@white, 50%);
+  }
+
+  @media (prefers-color-scheme: light) {
+    --breadcrumb-item-active: fade(@black, 50%);
+  }
+
   font-size: small;
 
   display: inline-flex;
@@ -163,6 +242,18 @@ nav[aria-label='Breadcrumb'] > ul {
 
   & > li {
     transition: all 0.1s linear;
+
+    &:last-of-type {
+      color: var(--breadcrumb-item-active);
+    }
+
+    &:not(:last-of-type) > a {
+      color: var(--breadcrumb-item);
+
+      &:hover {
+        color: var(--breadcrumb-item-hover);
+      }
+    }
 
     & + li::before {
       --padding-vertical: 0.75rem;

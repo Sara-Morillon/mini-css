@@ -16,7 +16,7 @@ dialog[open] {
 
   border: none;
 
-  background-color: rgb(0 0 0 / 80%);
+  background-color: rgba(0, 0, 0, 0.5);
 
   & > article {
     --padding-vertical: 0;
@@ -28,8 +28,8 @@ dialog[open] {
     background-color: var(--palette-background);
     color: var(--palette-foreground);
 
-    border-radius: 0.125rem;
-    border: 1px solid var(--palette-border);
+    border-radius: 0.25rem;
+    border: 1px solid var(--palette-background-dark);
 
     max-width: 70vw;
     min-width: 650px;
@@ -38,9 +38,15 @@ dialog[open] {
       --padding-vertical: 1rem;
       --padding-horizontal: 2rem;
 
-      border-radius: 0.125rem 0.125rem 0 0;
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
 
       white-space: nowrap;
+
+      box-shadow: var(--elevation);
+
+      color: var(--palette-foreground);
+      background-color: var(--palette-background-dark);
 
       & > button {
         --padding-vertical: 0;
@@ -48,7 +54,7 @@ dialog[open] {
 
         float: right;
 
-        color: var(--palette-primary-contrast);
+        color: var(--palette-foreground);
 
         &:hover {
           color: var(--palette-primary-light);
@@ -68,7 +74,8 @@ dialog[open] {
       --padding-vertical: 1rem;
       --padding-horizontal: 2rem;
 
-      border-radius: 0 0 0.125rem 0.125rem;
+      border-bottom-left-radius: inherit;
+      border-bottom-right-radius: inherit;
 
       text-align: right;
 

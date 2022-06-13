@@ -13,8 +13,12 @@ export function Nav() {
             <strong>Brand name</strong>
             <a href="#">Menu item 1</a>
             <a href="#">Menu item 2</a>
+            <a href="#" aria-disabled>
+              Disabled link
+            </a>
             <hr />
             <button>Menu button</button>
+            <button disabled>Disabled button</button>
             <button style={{ marginLeft: 'auto' }}>Right button</button>
           </nav>
         </article>
@@ -27,7 +31,11 @@ export function Nav() {
               <strong>Header</strong>
               <a href="#">Menu item 1</a>
               <a href="#">Menu item 2</a>
+              <a href="#" aria-disabled>
+                Disabled link
+              </a>
               <button>Menu button with long desc</button>
+              <button disabled>Disabled button</button>
               <hr />
               <button>Menu item 4</button>
             </nav>
@@ -46,6 +54,9 @@ export function Nav() {
             </a>
             <a role="tab" aria-selected={hash === '#tab3'} href="#tab3">
               Tab 3
+            </a>
+            <a role="tab" aria-disabled aria-selected={hash === '#tab3'} href="#tab3">
+              Tab 4
             </a>
           </div>
           <div id="tab1" role="tabpanel">

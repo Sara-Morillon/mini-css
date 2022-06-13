@@ -1,21 +1,17 @@
+@white: rgb(252, 253, 255);
+@black: rgb(32, 33, 35);
+@primary: rgb(25, 118, 210);
+
 :root {
   color-scheme: light dark;
 
-  --white-light: #fcfdff;
-  --white: #ecedef;
-  --white-dark: #dcdddf;
+  --white-light: lighten(@white, 10%);
+  --white: @white;
+  --white-dark: desaturate(darken(@white, 7%), 100%);
 
-  --black-light: #303133;
-  --black: #202123;
-  --black-dark: #101113;
-
-  --palette-primary-light: #63a4ff;
-  --palette-primary: #1976d2;
-  --palette-primary-dark: #004ba0;
-
-  --palette-primary-contrast: var(--white);
-
-  --palette-border: #aaaaaa;
+  --black-light: lighten(@black, 10%);
+  --black: @black;
+  --black-dark: darken(@black, 7%);
 
   --font-size: 16px;
   --font-face: 'Noto Sans', sans-serif;
@@ -26,7 +22,7 @@
   --margin-vertical: 0.25rem;
   --margin-horizontal: 0.5rem;
 
-  --elevation: 0 1px 4px 1px rgb(0 0 0 / 18%);
+  --elevation: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 
   --max-body-width: 100%;
 
@@ -39,7 +35,13 @@
     --palette-background: var(--black);
     --palette-background-dark: var(--black-dark);
 
-    --button-hover: var(--black-light);
+    --palette-primary-light: lighten(@primary, 10%);
+    --palette-primary: @primary;
+    --palette-primary-dark: darken(@primary, 10%);
+
+    --palette-primary-contrast: var(--white);
+
+    --palette-border: fade(@white, 10%);
   }
 
   @media (prefers-color-scheme: light) {
@@ -51,6 +53,12 @@
     --palette-background: var(--white);
     --palette-background-dark: var(--white-dark);
 
-    --button-hover: var(--white-dark);
+    --palette-primary-light: lighten(@primary, 10%);
+    --palette-primary: @primary;
+    --palette-primary-dark: darken(@primary, 10%);
+
+    --palette-primary-contrast: var(--white);
+
+    --palette-border: fade(@black, 32%);
   }
 }

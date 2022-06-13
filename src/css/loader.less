@@ -10,7 +10,7 @@
 [aria-busy='true'] {
   text-align: center;
 
-  &::after {
+  &::before {
     content: '';
 
     display: inline-block;
@@ -39,6 +39,7 @@
 }
 
 label[aria-busy='true'] {
+  text-align: initial;
   position: relative;
 
   & > input:not([type='checkbox']):not([type='radio']),
@@ -48,22 +49,22 @@ label[aria-busy='true'] {
     min-width: 3rem;
   }
 
-  &::after {
+  &::before {
     position: absolute;
 
-    bottom: 1rem;
+    bottom: 0.75rem;
     right: 1rem;
   }
 }
 
-input[type='checkbox'],
-input[type='radio'] {
+input[type='checkbox'][aria-busy='true'],
+input[type='radio'][aria-busy='true'] {
   position: relative;
 
   background: none;
   border: none;
 
-  &::after {
+  &::before {
     position: absolute;
 
     top: 0;
