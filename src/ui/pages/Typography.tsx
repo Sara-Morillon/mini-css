@@ -18,6 +18,12 @@ export function Typography() {
         This is a <mark>marked text</mark>
       </p>
       <p>
+        This is a <mark data-variant="badge">badge</mark>
+      </p>
+      <p>
+        This is a <mark data-variant="pill">pill</mark>
+      </p>
+      <p>
         Keyboard shortcut <kbd>ctrl + c</kbd>
       </p>
       <blockquote>

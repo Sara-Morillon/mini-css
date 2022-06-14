@@ -34,7 +34,7 @@ mark {
   --mark-background: fade(@primary, 50%);
 
   --padding-vertical: 0.125rem;
-  --padding-horizontal: 0.25rem;
+  --padding-horizontal: 0.125rem;
 
   padding: var(--padding-vertical) var(--padding-horizontal);
 
@@ -42,6 +42,21 @@ mark {
 
   color: var(--mark-foreground);
   background-color: var(--mark-background);
+
+  &[data-variant='badge'],
+  &[data-variant='pill'] {
+    --padding-horizontal: 0.5rem;
+
+    font-size: smaller;
+  }
+
+  &[data-variant='badge'] {
+    border-radius: 0.25rem;
+  }
+
+  &[data-variant='pill'] {
+    border-radius: 1rem;
+  }
 }
 
 kbd {
