@@ -105,10 +105,12 @@ aside > nav {
 
   @media (prefers-color-scheme: dark) {
     --nav-item-hover: var(--palette-background-light);
+    --nav-item-active: var(--palette-background-light);
   }
 
   @media (prefers-color-scheme: light) {
     --nav-item-hover: var(--palette-background-dark);
+    --nav-item-active: var(--palette-background-dark);
   }
 
   display: inline-flex;
@@ -143,6 +145,10 @@ aside > nav {
       color: var(--nav-foreground);
       background-color: var(--nav-item-hover);
     }
+  }
+
+  & > [aria-current='page'] {
+    background-color: var(--nav-item-active);
   }
 
   & > hr {

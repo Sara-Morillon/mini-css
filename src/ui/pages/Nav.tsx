@@ -11,7 +11,9 @@ export function Nav() {
         <article>
           <nav aria-label="Main">
             <strong>Brand name</strong>
-            <a href="#">Menu item 1</a>
+            <a href="#" aria-current="page">
+              Menu item 1 (active)
+            </a>
             <a href="#">Menu item 2</a>
             <a href="#" aria-disabled>
               Disabled link
@@ -29,7 +31,9 @@ export function Nav() {
           <aside>
             <nav>
               <strong>Header</strong>
-              <a href="#">Menu item 1</a>
+              <a href="#" aria-current="page">
+                Menu item 1 (active)
+              </a>
               <a href="#">Menu item 2</a>
               <a href="#" aria-disabled>
                 Disabled link
