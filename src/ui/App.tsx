@@ -1,6 +1,7 @@
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
 import { Button } from './pages/Button'
 import { Dialog } from './pages/Dialog'
+import { Dropdown } from './pages/Dropdown'
 import { Form } from './pages/Form'
 import { Layout } from './pages/Layout'
 import { Loader } from './pages/Loader'
@@ -22,6 +23,7 @@ export function App() {
         <NavLink to="/loader">Loader</NavLink>
         <NavLink to="/dialog">Dialog</NavLink>
         <NavLink to="/table">Table</NavLink>
+        <NavLink to="/dropdown">Dropdown</NavLink>
       </nav>
       <header>
         <h1>Mini CSS</h1>
@@ -36,6 +38,7 @@ export function App() {
           <Route path="/loader" element={<Loader />} />
           <Route path="/dialog" element={<Dialog />} />
           <Route path="/table" element={<Table />} />
+          <Route path="/dropdown" element={<Dropdown />} />
         </Routes>
       </main>
       <footer>Sara Morillon &copy; {new Date().getFullYear()}</footer>

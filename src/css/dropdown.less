@@ -1,0 +1,109 @@
+[role='listbox'] {
+  --dropdown-background: var(--palette-background);
+  --dropdown-foreground: var(--palette-foreground);
+  --dropdown-border: var(--palette-border);
+  --dropdown-divider: var(--palette-background-dark);
+
+  @media (prefers-color-scheme: dark) {
+    --dropdown-item-hover: var(--palette-background-light);
+    --dropdown-item-active: var(--palette-background-light);
+  }
+
+  @media (prefers-color-scheme: light) {
+    --dropdown-item-hover: var(--palette-background-dark);
+    --dropdown-item-active: var(--palette-background-dark);
+  }
+
+  display: none;
+  position: absolute;
+  z-index: 1;
+
+  flex-direction: column;
+  align-items: stretch;
+
+  background-color: var(--dropdown-background);
+
+  border-radius: 0.25rem;
+  border: 1px solid var(--dropdown-border);
+
+  & > hr {
+    --margin-vertical: 0.5rem;
+    --margin-horizontal: 0;
+
+    margin: var(--margin-vertical) var(--margin-horizontal);
+
+    align-self: stretch;
+
+    border-color: var(--dropdown-divider);
+  }
+
+  & > :not(hr) {
+    --padding-vertical: 0.5rem;
+    --padding-horizontal: 1rem;
+
+    padding: var(--padding-vertical) var(--padding-horizontal);
+
+    transition: all 0.1s linear;
+  }
+
+  & > a,
+  & > a:hover {
+    text-decoration: none;
+    color: var(--palette-foreground);
+  }
+
+  & > button {
+    text-transform: unset;
+    letter-spacing: unset;
+  }
+
+  & > a[aria-disabled],
+  & > button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  & > a:not([aria-disabled]),
+  & > button:not(:disabled) {
+    &:hover {
+      color: var(--dropdown-foreground);
+      background-color: var(--dropdown-item-hover);
+    }
+  }
+
+  & > [aria-selected] {
+    background-color: var(--dropdown-item-active);
+  }
+
+  & > hr {
+    --margin-horizontal: 1rem;
+
+    border-bottom: none;
+  }
+
+  & > button {
+    text-align: left;
+  }
+
+  [aria-haspopup='listbox']:hover + &,
+  &:hover {
+    display: flex;
+  }
+
+  [role='listbox'] {
+    left: 100%;
+    width: 100%;
+  }
+
+  [aria-haspopup='listbox']:after {
+    content: ' ⏵';
+  }
+}
+
+[aria-haspopup='listbox'] {
+  cursor: pointer;
+  position: relative;
+  &:after {
+    content: ' ⏷';
+  }
+}
