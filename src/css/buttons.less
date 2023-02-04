@@ -1,6 +1,9 @@
 button,
 [role='button'] {
+  --button-background: 'transparent';
   --button-foreground: var(--palette-foreground);
+
+  --button-border: 'transparent';
 
   @media (prefers-color-scheme: dark) {
     --button-hover: fade(@white, 7%);
@@ -23,11 +26,11 @@ button,
   cursor: pointer;
 
   color: var(--button-foreground);
-  background: none;
+  background-color: var(--button-background);
 
   padding: var(--padding-vertical) var(--padding-horizontal);
 
-  border: none;
+  border: 1px solid var(--button-border);
   border-radius: 0.125rem;
 
   transition: all 0.1s ease-in-out;
@@ -52,14 +55,9 @@ button,
     --button-border: var(--palette-primary-dark);
 
     color: var(--button-foreground);
-    background-color: var(--button-background);
-
-    border: 1px solid var(--button-border);
   }
 
   &[data-variant='outlined'] {
     --button-border: var(--palette-background-dark);
-
-    border: 1px solid var(--palette-border);
   }
 }
