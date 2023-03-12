@@ -22,7 +22,7 @@ dialog {
   color: var(--palette-foreground);
 
   border-radius: 0.25rem;
-  border: 1px solid var(--palette-background-dark);
+  border: 1px solid var(--palette-border);
 
   box-shadow: var(--elevation);
 
@@ -35,15 +35,7 @@ dialog {
   }
 
   &::backdrop {
-    @media (prefers-color-scheme: dark) {
-      --dialog-backdrop-background: fade(@white, 10%);
-    }
-
-    @media (prefers-color-scheme: light) {
-      --dialog-backdrop-background: fade(@black, 50%);
-    }
-
-    background-color: var(--dialog-backdrop-background);
+    background-color: fade(@black, 50%);
   }
 
   & > header {
