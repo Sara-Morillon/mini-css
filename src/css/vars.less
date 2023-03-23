@@ -1,5 +1,5 @@
 @white: rgb(252, 253, 255);
-@black: rgb(46, 46, 48);
+@black: rgb(34, 34, 38);
 @primary: rgb(25, 118, 210);
 
 :root {
@@ -9,9 +9,9 @@
   --white: @white;
   --white-dark: desaturate(darken(@white, 7%), 100%);
 
-  --black-light: lighten(@black, 10%);
+  --black-light: lighten(@black, 6.5%);
   --black: @black;
-  --black-dark: darken(@black, 6.5%);
+  --black-dark: darken(@black, 3.6%);
 
   --font-size: 1rem;
   --font-face: 'Noto Sans', sans-serif;
@@ -35,8 +35,8 @@
     --palette-background: var(--black);
     --palette-background-dark: var(--black-dark);
 
-    --palette-primary-light: lighten(@primary, 10%);
-    --palette-primary: @primary;
+    --palette-primary-light: lighten(@primary, 28.5%);
+    --palette-primary: lighten(@primary, 10%);
     --palette-primary-dark: darken(@primary, 10%);
 
     --palette-primary-contrast: var(--white);
