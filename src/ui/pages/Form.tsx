@@ -128,8 +128,8 @@ export function Form() {
       <label>
         Typeahead (without logic)
         <div role="combobox">
-          <button>Option 2</button>
-          <button>Option 3</button>
+          <span role="option">Option 2</span>
+          <span role="option">Option 3</span>
           <input list="datalist" />
           <datalist id="datalist">
             <option>Option 1</option>

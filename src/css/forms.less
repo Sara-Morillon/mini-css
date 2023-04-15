@@ -298,11 +298,14 @@ progress::-webkit-progress-value {
     flex: 1;
   }
 
-  & > button {
+  & > [role='option'] {
     --padding-vertical: 0.25rem;
     --padding-horizontal: 0.5rem;
 
-    --button-border: var(--palette-border);
+    padding: var(--padding-vertical) var(--padding-horizontal);
+
+    border: 1px solid var(--palette-border);
+    border-radius: 0.125rem;
 
     text-transform: none;
   }
