@@ -125,6 +125,19 @@ export function Form() {
         </select>
       </label>
 
+      <label>
+        Typeahead (without logic)
+        <div role="combobox">
+          <button>Option 2</button>
+          <button>Option 3</button>
+          <input list="datalist" />
+          <datalist id="datalist">
+            <option>Option 1</option>
+            <option>Option 3</option>
+          </datalist>
+        </div>
+      </label>
+
       <h3>Other</h3>
 
       <label>

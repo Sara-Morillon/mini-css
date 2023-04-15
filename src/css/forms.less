@@ -27,10 +27,9 @@ label {
 
   & > input:not([type='radio']):not([type='checkbox']),
   & > textarea,
-  & > select {
+  & > select,
+  & > [role='combobox'] {
     --margin-vertical: 0.5rem;
-
-    display: block;
 
     margin-top: var(--margin-vertical);
 
@@ -41,7 +40,8 @@ label {
 input,
 textarea,
 select,
-progress {
+progress,
+[role='combobox'] {
   --padding-vertical: 0.5rem;
   --padding-horizontal: 1rem;
 
@@ -284,4 +284,25 @@ progress::-webkit-progress-value {
   background-color: var(--palette-primary);
 
   border-radius: 0.5rem;
+}
+
+[role='combobox'] {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > input {
+    all: unset;
+    flex: 1;
+  }
+
+  & > button {
+    --padding-vertical: 0.25rem;
+    --padding-horizontal: 0.5rem;
+
+    --button-border: var(--palette-border);
+
+    margin-right: 0.5rem;
+
+    text-transform: none;
+  }
 }
