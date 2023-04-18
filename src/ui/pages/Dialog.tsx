@@ -15,12 +15,12 @@ export function Dialog() {
     <section>
       <h2>Dialog</h2>
       <button onClick={open}>Open dialog</button>
-      <dialog ref={ref}>
-        <header>
+      <dialog ref={ref} onClick={close}>
+        <header onClick={(e) => e.stopPropagation()}>
           <h1>Dialog header</h1>
           <button onClick={close}>✖</button>
         </header>
-        <p>
+        <p onClick={(e) => e.stopPropagation()}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ornare purus lorem, vel finibus diam
           tincidunt sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
           Aenean aliquet odio et dolor aliquam bibendum. Sed eget vestibulum enim, vel tincidunt ligula. Aliquam sit
@@ -29,7 +29,7 @@ export function Dialog() {
           quam scelerisque, ut iaculis ligula vestibulum. Nullam elementum mi sem, et sodales felis laoreet sit amet.
           Sed sed porttitor nunc. Fusce ac lacus ut turpis dictum scelerisque ut non erat.
         </p>
-        <footer>
+        <footer onClick={(e) => e.stopPropagation()}>
           <button onClick={close}>Close</button>
           <button onClick={close}>Confirm</button>
         </footer>
