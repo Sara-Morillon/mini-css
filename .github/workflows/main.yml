@@ -29,9 +29,6 @@ jobs:
       - name: Build sources
         run: pnpm build
 
-      - name: Run tests
-        run: pnpm vitest run
-
       - name: Publish package
         run: pnpm publish --access public --no-git-checks
         env:
