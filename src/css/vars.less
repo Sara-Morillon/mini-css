@@ -1,28 +1,26 @@
-@white: rgb(252, 253, 255);
+@white: rgb(247, 248, 250);
 @black: rgb(34, 34, 38);
 @primary: rgb(25, 118, 210);
 
 :root {
   color-scheme: light dark;
 
-  --white-light: lighten(@white, 10%);
+  --white-light: lighten(@white, 5%);
   --white: @white;
-  --white-dark: desaturate(darken(@white, 7%), 100%);
+  --white-dark: desaturate(darken(@white, 3%), 100%);
 
-  --black-light: lighten(@black, 6.5%);
+  --black-light: lighten(@black, 1.5%);
   --black: @black;
   --black-dark: darken(@black, 3.6%);
 
   --font-size: 1rem;
-  --font-face: 'Noto Sans', sans-serif;
+  --font-face: 'Quicksand', sans-serif;
 
-  --padding-vertical: 0.5rem;
-  --padding-horizontal: 0.75rem;
+  --padding-vertical: 0.375rem;
+  --padding-horizontal: 0.5rem;
 
   --margin-vertical: 0.25rem;
   --margin-horizontal: 0.5rem;
-
-  --elevation: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 
   --max-body-width: 100%;
 

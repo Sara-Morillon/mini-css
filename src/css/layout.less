@@ -1,17 +1,28 @@
 header,
 footer {
-  --padding-vertical: 3rem;
+  --padding-vertical: 2rem;
   --padding-horizontal: 3rem;
 
   padding: var(--padding-vertical) var(--padding-horizontal);
 }
 
 header {
-  --header-background: var(--palette-background-dark);
   --header-foreground: var(--palette-foreground);
+
+  @media (prefers-color-scheme: dark) {
+    --header-background: var(--palette-background-light);
+  }
+
+  @media (prefers-color-scheme: light) {
+    --header-background: var(--palette-background-dark);
+  }
 
   color: var(--header-foreground);
   background-color: var(--header-background);
+
+  &>h1, &>h2, &>h3, &>h4, &>h5, &>h6 {
+    margin: 0
+  }
 }
 
 footer {
@@ -20,23 +31,25 @@ footer {
 }
 
 main {
-  --padding-vertical: 3rem;
+  --padding-vertical: 2rem;
   --padding-horizontal: 3rem;
 
   padding: var(--padding-vertical) var(--padding-horizontal);
 }
 
 article {
+
   @media (prefers-color-scheme: dark) {
-    --article-background: lighten(@black, 5%);
+    --article-border: var(--palette-border);
   }
-
+  
   @media (prefers-color-scheme: light) {
-    --article-background: lighten(@white, 5%);
+    --article-border: var(--palette-border);
   }
 
-  --padding-vertical: 1.5rem;
-  --padding-horizontal: 1.5rem;
+
+  --padding-vertical: 0.75rem;
+  --padding-horizontal: 1rem;
 
   --margin-vertical: 1.5rem;
 
@@ -45,9 +58,8 @@ article {
 
   background-color: var(--article-background);
 
-  box-shadow: var(--elevation);
-
-  border-radius: 0.125rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--article-border);
 
   h1,
   h2,

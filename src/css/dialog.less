@@ -21,10 +21,9 @@ dialog {
   background-color: var(--palette-background);
   color: var(--palette-foreground);
 
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   border: 1px solid var(--palette-border);
 
-  box-shadow: var(--elevation);
 
   &[open] {
     pointer-events: inherit;
@@ -48,7 +47,7 @@ dialog {
     white-space: nowrap;
 
     color: var(--palette-foreground);
-    background-color: var(--palette-background-dark);
+    background-color: inherit;
 
     display: flex;
     justify-content: space-between;
@@ -82,6 +81,7 @@ dialog {
 
     border-bottom-left-radius: inherit;
     border-bottom-right-radius: inherit;
+    border-top: none;
 
     text-align: right;
 

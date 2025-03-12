@@ -13,13 +13,12 @@ button,
     --button-hover: fade(@black, 7%);
   }
 
-  --padding-vertical: 0.5rem;
-  --padding-horizontal: 1rem;
+  --padding-vertical: 0.25rem;
+  --padding-horizontal: 0.5rem;
 
   font-weight: normal;
   font-size: var(--font-size);
   font-family: var(--font-face);
-  text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.08rem;
 
@@ -31,7 +30,7 @@ button,
   padding: var(--padding-vertical) var(--padding-horizontal);
 
   border: 1px solid var(--button-border);
-  border-radius: 0.125rem;
+  border-radius: 0.25rem;
 
   transition: all 0.1s ease-in-out;
 
@@ -53,7 +52,7 @@ button,
     --button-foreground: var(--palette-primary-contrast);
 
     --button-hover: lighten(@primary, 5%);
-    --button-border: var(--palette-primary-dark);
+    --button-border: 'transparent';
 
     color: var(--button-foreground);
   }

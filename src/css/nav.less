@@ -42,12 +42,12 @@ nav[aria-label='Main'] {
   }
 
   @media (prefers-color-scheme: light) {
-    --navbar-background: var(--palette-primary);
-    --navbar-foreground: var(--palette-primary-contrast);
-    --navbar-border: var(--palette-primary-light);
-    --navbar-divider: var(--palette-primary-dark);
-    --navbar-item-hover: var(--palette-primary-dark);
-    --navbar-item-active: var(--palette-primary-dark);
+    --navbar-background: var(--palette-background);
+    --navbar-foreground: var(--palette-foreground);
+    --navbar-border: var(--palette-background-dark);
+    --navbar-divider: var(--palette-background-dark);
+    --navbar-item-hover: var(--palette-background-dark);
+    --navbar-item-active: var(--palette-background-dark);
   }
 
   display: flex;
@@ -62,8 +62,8 @@ nav[aria-label='Main'] {
   }
 
   & > :not(hr) {
-    --padding-vertical: 1rem;
-    --padding-horizontal: 1rem;
+    --padding-vertical: 0.5rem;
+    --padding-horizontal: 0.75rem;
 
     color: var(--navbar-foreground);
   }
@@ -189,8 +189,8 @@ aside > nav {
   border-bottom: 2px solid var(--tab-border);
 
   & > [role='tab'] {
-    --padding-vertical: 0.75rem;
-    --padding-horizontal: 0.75rem;
+    --padding-vertical: 0.25rem;
+    --padding-horizontal: 0.5rem;
 
     margin-bottom: -2px;
 

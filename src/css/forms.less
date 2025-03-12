@@ -42,16 +42,8 @@ textarea,
 select,
 progress,
 [role='combobox'] {
-  --padding-vertical: 0.5rem;
-  --padding-horizontal: 1rem;
-
-  @media (prefers-color-scheme: dark) {
-    --form-control-background: fade(@white, 3%);
-  }
-
-  @media (prefers-color-scheme: light) {
-    --form-control-background: fade(@black, 3%);
-  }
+  --padding-vertical: 0.375rem;
+  --padding-horizontal: 0.5rem;
 
   border-radius: 0.25rem;
   border: 1px solid var(--palette-border);
@@ -65,7 +57,7 @@ progress,
   padding: var(--padding-vertical) var(--padding-horizontal);
 
   color: var(--palette-foreground);
-  background: var(--form-control-background);
+  background: none;
 
   transition: all 0.2s ease-in-out;
 
