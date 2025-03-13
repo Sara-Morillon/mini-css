@@ -9,20 +9,22 @@ export function Nav() {
       <section>
         <h3>Top navigation</h3>
         <article>
-          <nav aria-label="Main">
-            <strong>Brand name</strong>
-            <a href="#" aria-current="page">
-              Menu item 1 (active)
-            </a>
-            <a href="#">Menu item 2</a>
-            <a href="#" aria-disabled>
-              Disabled link
-            </a>
-            <hr />
-            <button>Menu button</button>
-            <button disabled>Disabled button</button>
-            <button style={{ marginLeft: 'auto' }}>Right button</button>
-          </nav>
+          <header>
+            <nav>
+              <strong>Brand name</strong>
+              <a href="#" aria-current="page">
+                Menu item 1 (active)
+              </a>
+              <a href="#">Menu item 2</a>
+              <a href="#" aria-disabled>
+                Disabled link
+              </a>
+              <hr />
+              <button>Menu button</button>
+              <button disabled>Disabled button</button>
+              <button style={{ marginLeft: 'auto' }}>Right button</button>
+            </nav>
+          </header>
         </article>
       </section>
       <section>

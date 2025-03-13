@@ -1,4 +1,4 @@
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, NavLink, Navigate, Route, Routes } from 'react-router-dom'
 import { Button } from './pages/Button'
 import { Dialog } from './pages/Dialog'
 import { Dropdown } from './pages/Dropdown'
@@ -12,21 +12,19 @@ import { Typography } from './pages/Typography'
 export function App() {
   return (
     <BrowserRouter>
-      <nav aria-label="Main">
-        <strong>Mini CSS</strong>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/nav">Navigation</NavLink>
-        <NavLink to="/form">Form</NavLink>
-        <NavLink to="/button">Button</NavLink>
-        <NavLink to="/typo">Typography</NavLink>
-        <NavLink to="/layout">Layout</NavLink>
-        <NavLink to="/loader">Loader</NavLink>
-        <NavLink to="/dialog">Dialog</NavLink>
-        <NavLink to="/table">Table</NavLink>
-        <NavLink to="/dropdown">Dropdown</NavLink>
-      </nav>
       <header>
-        <h1>Mini CSS</h1>
+        <strong>Mini CSS</strong>
+        <nav>
+          <NavLink to="/nav">Navigation</NavLink>
+          <NavLink to="/form">Form</NavLink>
+          <NavLink to="/button">Button</NavLink>
+          <NavLink to="/typo">Typography</NavLink>
+          <NavLink to="/layout">Layout</NavLink>
+          <NavLink to="/loader">Loader</NavLink>
+          <NavLink to="/dialog">Dialog</NavLink>
+          <NavLink to="/table">Table</NavLink>
+          <NavLink to="/dropdown">Dropdown</NavLink>
+        </nav>
       </header>
       <main>
         <Routes>
@@ -39,6 +37,7 @@ export function App() {
           <Route path="/dialog" element={<Dialog />} />
           <Route path="/table" element={<Table />} />
           <Route path="/dropdown" element={<Dropdown />} />
+          <Route path="*" element={<Navigate to="/nav" />} />
         </Routes>
       </main>
       <footer>Sara Morillon &copy; {new Date().getFullYear()}</footer>

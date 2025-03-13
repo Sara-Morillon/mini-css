@@ -1,6 +1,6 @@
 /* COMMON */
 
-nav[aria-label='Main'],
+header>nav,
 aside>nav,
 [role='tablist'] {
   &> :not(hr) {
@@ -21,17 +21,22 @@ aside>nav,
   &>a {
     text-decoration: none;
     color: var(--palette-foreground);
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   &>button {
     text-transform: unset;
     letter-spacing: unset;
+    border: none;
   }
 }
 
 /* TOP NAVIGATION */
 
-nav[aria-label='Main'] {
+header>nav {
   @media (prefers-color-scheme: dark) {
     --navbar-background: var(--palette-background);
     --navbar-foreground: var(--palette-foreground);
@@ -54,8 +59,6 @@ nav[aria-label='Main'] {
   align-items: center;
 
   background-color: var(--navbar-background);
-
-  border-bottom: 2px solid var(--navbar-border);
 
   &>hr {
     border-color: var(--navbar-divider);

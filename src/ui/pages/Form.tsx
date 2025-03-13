@@ -34,7 +34,7 @@ export function Form() {
       </label>
 
       <label>
-        Textarea <textarea placeholder="Textarea"></textarea>
+        Textarea <textarea placeholder="Textarea" />
       </label>
 
       <h3>Date inputs</h3>
@@ -127,9 +127,13 @@ export function Form() {
 
       <label>
         Typeahead (without logic)
-        <div role="combobox">
-          <span role="option">Option 2</span>
-          <span role="option">Option 3</span>
+        <div role="combobox" aria-controls="datalist" aria-expanded="false">
+          <span role="option" aria-selected="false">
+            Option 2
+          </span>
+          <span role="option" aria-selected="false">
+            Option 3
+          </span>
           <input list="datalist" />
           <datalist id="datalist">
             <option>Option 1</option>

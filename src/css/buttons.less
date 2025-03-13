@@ -3,15 +3,7 @@ button,
   --button-background: 'transparent';
   --button-foreground: var(--palette-foreground);
 
-  --button-border: 'transparent';
-
-  @media (prefers-color-scheme: dark) {
-    --button-hover: fade(@white, 7%);
-  }
-
-  @media (prefers-color-scheme: light) {
-    --button-hover: fade(@black, 7%);
-  }
+  --button-border: var(--palette-border);
 
   --padding-vertical: 0.25rem;
   --padding-horizontal: 0.5rem;
@@ -35,7 +27,18 @@ button,
   transition: all 0.1s ease-in-out;
 
   &:hover:not(:disabled) {
-    background-color: var(--button-hover);
+    --button-foreground: var(--palette-primary-contrast);
+
+    @media (prefers-color-scheme: dark) {
+      --button-background: var(--palette-primary-dark);
+    }
+
+    @media (prefers-color-scheme: light) {
+      --button-background: var(--palette-primary);
+    }
+
+    --button-border: var(--palette-primary);
+
     text-decoration: none;
   }
 
@@ -45,19 +48,5 @@ button,
     &:hover {
       cursor: not-allowed;
     }
-  }
-
-  &[data-variant='primary'] {
-    --button-background: var(--palette-primary);
-    --button-foreground: var(--palette-primary-contrast);
-
-    --button-hover: lighten(@primary, 5%);
-    --button-border: 'transparent';
-
-    color: var(--button-foreground);
-  }
-
-  &[data-variant='outlined'] {
-    --button-border: var(--palette-border);
   }
 }

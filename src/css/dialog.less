@@ -37,7 +37,7 @@ dialog {
     background-color: fade(@black, 50%);
   }
 
-  & > header {
+  &>header {
     --padding-vertical: 1rem;
     --padding-horizontal: 2rem;
 
@@ -48,34 +48,37 @@ dialog {
 
     color: var(--palette-foreground);
     background-color: inherit;
+    border: none;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    & > h1,
-    & > h2,
-    & > h3,
-    & > h4,
-    & > h5,
-    & > h6 {
+    &>h1,
+    &>h2,
+    &>h3,
+    &>h4,
+    &>h5,
+    &>h6 {
       margin: 0;
     }
 
-    & > button {
+    &>button {
       --padding-vertical: 0.25rem;
       --padding-horizontal: 0.5rem;
+
+      border: none;
     }
   }
 
-  & > p {
+  &>p {
     --padding-vertical: 1rem;
     --padding-horizontal: 2rem;
 
     padding: var(--padding-vertical) var(--padding-horizontal);
   }
 
-  & > footer {
+  &>footer {
     --padding-vertical: 1rem;
     --padding-horizontal: 2rem;
 

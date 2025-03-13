@@ -14,7 +14,6 @@
     --dropdown-item-active: var(--palette-background-dark);
   }
 
-  display: none;
   position: absolute;
   z-index: 1;
 
@@ -26,7 +25,11 @@
   border-radius: 0.25rem;
   border: 1px solid var(--dropdown-border);
 
-  & > hr {
+  &:not([hidden]) {
+    display: flex;
+  }
+
+  &>hr {
     --margin-vertical: 0.5rem;
     --margin-horizontal: 0;
 
@@ -37,7 +40,7 @@
     border-color: var(--dropdown-divider);
   }
 
-  & > :not(hr) {
+  &> :not(hr):not([role='listbox']) {
     --padding-vertical: 0.5rem;
     --padding-horizontal: 1rem;
 
@@ -46,51 +49,48 @@
     transition: all 0.1s linear;
   }
 
-  & > a,
-  & > a:hover {
+  &>a,
+  &>a:hover {
     text-decoration: none;
     color: var(--palette-foreground);
   }
 
-  & > button {
+  &>button {
     text-transform: unset;
     letter-spacing: unset;
+    border: none;
   }
 
-  & > a[aria-disabled],
-  & > button:disabled {
+  &>a[aria-disabled],
+  &>button:disabled {
     opacity: 0.7;
     cursor: not-allowed;
   }
 
-  & > a:not([aria-disabled]),
-  & > button:not(:disabled) {
+  &>a:not([aria-disabled]),
+  &>button:not(:disabled) {
     &:hover {
       color: var(--dropdown-foreground);
       background-color: var(--dropdown-item-hover);
     }
   }
 
-  & > [aria-selected] {
+  &>[aria-selected="true"] {
     background-color: var(--dropdown-item-active);
   }
 
-  & > hr {
+  &>hr {
     --margin-horizontal: 1rem;
 
     border-bottom: none;
   }
 
-  & > button {
+  &>button {
     text-align: left;
   }
 
-  [aria-haspopup='listbox']:hover + &,
-  &:hover {
-    display: flex;
-  }
-
   [role='listbox'] {
+    top: -1px;
     left: 100%;
     width: 100%;
   }
@@ -103,6 +103,7 @@
 [aria-haspopup='listbox'] {
   cursor: pointer;
   position: relative;
+
   &:after {
     content: ' ⏷';
   }

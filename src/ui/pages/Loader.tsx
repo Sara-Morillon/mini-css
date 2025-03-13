@@ -7,9 +7,6 @@ export function Loader() {
       </div>
       <h2>Loading button</h2>
       <button aria-busy>Send</button>
-      <button aria-busy data-variant="primary">
-        Send
-      </button>
       <h2>Loading article</h2>
       <article aria-busy />
       <h2>Loading container</h2>
