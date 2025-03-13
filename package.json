@@ -1,6 +1,6 @@
 {
   "name": "@saramorillon/minicss",
-  "version": "2.1.2",
+  "version": "2.3.0",
   "main": "index.js",
   "license": "MIT",
   "type": "module",
