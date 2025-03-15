@@ -1,4 +1,7 @@
 dialog {
+  --padding-vertical: 2rem;
+  --padding-horizontal: 2rem;
+
   display: block;
 
   position: fixed;
@@ -24,6 +27,7 @@ dialog {
   border-radius: 0.5rem;
   border: 1px solid var(--palette-border);
 
+  padding: var(--padding-vertical) var(--padding-horizontal);
 
   &[open] {
     pointer-events: inherit;
@@ -37,9 +41,9 @@ dialog {
     background-color: fade(@black, 50%);
   }
 
-  &>header {
-    --padding-vertical: 1rem;
-    --padding-horizontal: 2rem;
+  header {
+    --padding-vertical: 0;
+    --padding-horizontal: 0;
 
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
@@ -71,16 +75,9 @@ dialog {
     }
   }
 
-  &>p {
-    --padding-vertical: 1rem;
-    --padding-horizontal: 2rem;
-
-    padding: var(--padding-vertical) var(--padding-horizontal);
-  }
-
-  &>footer {
-    --padding-vertical: 1rem;
-    --padding-horizontal: 2rem;
+  footer {
+    --padding-vertical: 0;
+    --padding-horizontal: 0;
 
     border-bottom-left-radius: inherit;
     border-bottom-right-radius: inherit;
@@ -88,8 +85,11 @@ dialog {
 
     text-align: right;
 
-    & button {
-      margin-left: var(--margin-horizontal);
+    &>button {
+      --padding-vertical: 0.25rem;
+      --padding-horizontal: 0.5rem;
+
+      border: none;
     }
   }
 }
