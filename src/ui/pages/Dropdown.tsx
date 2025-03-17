@@ -3,7 +3,7 @@ export function Dropdown() {
     <section>
       <h2>Dropdown (without logic)</h2>
       <button aria-haspopup="listbox" aria-expanded="false" aria-controls="dropdown1">
-        Trigger
+        Trigger ⏷
       </button>
       <div role="listbox" id="dropdown1" hidden>
         <strong>Header</strong>
@@ -27,7 +27,7 @@ export function Dropdown() {
 
       <h2>Open dropdown (without logic)</h2>
       <button aria-haspopup="listbox" aria-expanded="true" aria-controls="dropdown2">
-        Trigger
+        Trigger ⏷
       </button>
       <div role="listbox" id="dropdown2">
         <strong>Header</strong>
@@ -53,7 +53,7 @@ export function Dropdown() {
 
       <h2>Nested dropdown (without logic)</h2>
       <button aria-haspopup="listbox" aria-expanded="true" aria-controls="dropdown3">
-        Trigger
+        Trigger ⏵
       </button>
       <div role="listbox" id="dropdown3">
         <button role="option" aria-selected="false">
@@ -66,7 +66,7 @@ export function Dropdown() {
           aria-expanded="true"
           aria-controls="dropdown4"
         >
-          Trigger 2
+          Trigger 2 ⏵
         </button>
         <div role="listbox" id="dropdown4">
           <button role="option" aria-selected="false">
@@ -82,7 +82,7 @@ export function Dropdown() {
             aria-expanded="true"
             aria-controls="dropdown5"
           >
-            Trigger 3
+            Trigger 3 ⏵
           </button>
           <div role="listbox" id="dropdown5">
             <button role="option" aria-selected="false">

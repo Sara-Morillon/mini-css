@@ -94,17 +94,10 @@
     left: 100%;
     width: 100%;
   }
-
-  [aria-haspopup='listbox']:after {
-    content: ' ⏵';
-  }
 }
 
 [aria-haspopup='listbox'] {
   cursor: pointer;
   position: relative;
-
-  &:after {
-    content: ' ⏷';
-  }
+  border: none;
 }
