@@ -11,18 +11,36 @@ export function Nav() {
         <article>
           <header>
             <nav>
-              <strong>Brand name</strong>
-              <a href="#" aria-current="page">
-                Menu item 1 (active)
-              </a>
-              <a href="#">Menu item 2</a>
-              <a href="#" aria-disabled>
-                Disabled link
-              </a>
-              <hr />
-              <button>Menu button</button>
-              <button disabled>Disabled button</button>
-              <button style={{ marginLeft: 'auto' }}>Right button</button>
+              <ul>
+                <li>
+                  <strong>Brand name</strong>
+                </li>
+                <li>
+                  <a href="#" aria-current="page">
+                    Menu item 1 (active)
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Menu item 2</a>
+                </li>
+                <li>
+                  <a href="#" aria-disabled>
+                    Disabled link
+                  </a>
+                </li>
+                <li>
+                  <hr />
+                </li>
+                <li>
+                  <button>Menu button</button>
+                </li>
+                <li>
+                  <button disabled>Disabled button</button>
+                </li>
+                <li>
+                  <button style={{ marginLeft: 'auto' }}>Right button</button>
+                </li>
+              </ul>
             </nav>
           </header>
         </article>
@@ -32,18 +50,36 @@ export function Nav() {
         <article>
           <aside>
             <nav>
-              <strong>Header</strong>
-              <a href="#" aria-current="page">
-                Menu item 1 (active)
-              </a>
-              <a href="#">Menu item 2</a>
-              <a href="#" aria-disabled>
-                Disabled link
-              </a>
-              <button>Menu button with long desc</button>
-              <button disabled>Disabled button</button>
-              <hr />
-              <button>Menu item 4</button>
+              <ul>
+                <li>
+                  <strong>Header</strong>
+                </li>
+                <li>
+                  <a href="#" aria-current="page">
+                    Menu item 1 (active)
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Menu item 2</a>
+                </li>
+                <li>
+                  <a href="#" aria-disabled>
+                    Disabled link
+                  </a>
+                </li>
+                <li>
+                  <button>Menu button with long desc</button>
+                </li>
+                <li>
+                  <button disabled>Disabled button</button>
+                </li>
+                <li>
+                  <hr />
+                </li>
+                <li>
+                  <button>Menu item 4</button>
+                </li>
+              </ul>
             </nav>
           </aside>
         </article>

@@ -15,15 +15,35 @@ export function App() {
       <header>
         <strong>Mini CSS</strong>
         <nav>
-          <NavLink to="/nav">Navigation</NavLink>
-          <NavLink to="/form">Form</NavLink>
-          <NavLink to="/button">Button</NavLink>
-          <NavLink to="/typo">Typography</NavLink>
-          <NavLink to="/layout">Layout</NavLink>
-          <NavLink to="/loader">Loader</NavLink>
-          <NavLink to="/dialog">Dialog</NavLink>
-          <NavLink to="/table">Table</NavLink>
-          <NavLink to="/dropdown">Dropdown</NavLink>
+          <ul>
+            <li>
+              <NavLink to="/nav">Navigation</NavLink>
+            </li>
+            <li>
+              <NavLink to="/form">Form</NavLink>
+            </li>
+            <li>
+              <NavLink to="/button">Button</NavLink>
+            </li>
+            <li>
+              <NavLink to="/typo">Typography</NavLink>
+            </li>
+            <li>
+              <NavLink to="/layout">Layout</NavLink>
+            </li>
+            <li>
+              <NavLink to="/loader">Loader</NavLink>
+            </li>
+            <li>
+              <NavLink to="/dialog">Dialog</NavLink>
+            </li>
+            <li>
+              <NavLink to="/table">Table</NavLink>
+            </li>
+            <li>
+              <NavLink to="/dropdown">Dropdown</NavLink>
+            </li>
+          </ul>
         </nav>
       </header>
       <main>

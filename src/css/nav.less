@@ -1,10 +1,12 @@
 /* COMMON */
 
-header>nav,
-aside>nav,
+header>nav>ul>li,
+aside>nav>ul>li,
 [role='tablist'] {
   &> :not(hr) {
     padding: var(--padding-vertical) var(--padding-horizontal);
+
+    display: block;
 
     transition: all 0.1s linear;
   }
@@ -34,6 +36,20 @@ aside>nav,
   }
 }
 
+header>nav,
+aside>nav {
+  &>ul {
+    padding: 0;
+    margin: 0;
+
+    &>li {
+      transition: all 0.1s linear;
+
+      list-style-type: none;
+    }
+  }
+}
+
 /* TOP NAVIGATION */
 
 header>nav {
@@ -55,48 +71,49 @@ header>nav {
     --navbar-item-active: var(--palette-background-dark);
   }
 
-  display: flex;
-  align-items: center;
-
   background-color: var(--navbar-background);
 
-  &>hr {
-    border-color: var(--navbar-divider);
-  }
+  &>ul {
+    display: flex;
+    align-items: center;
 
-  &> :not(hr) {
-    --padding-vertical: 0.75rem;
-    --padding-horizontal: 1.25rem;
+    &>li {
+      &>hr {
+        border-color: var(--navbar-divider);
+        border-left: none;
+      }
 
-    color: var(--navbar-foreground);
-  }
+      &> :not(hr) {
+        --padding-vertical: 0.75rem;
+        --padding-horizontal: 1.25rem;
 
-  &>button {
-    border-radius: 0;
-  }
+        color: var(--navbar-foreground);
+      }
 
-  &>a[aria-disabled='true'],
-  &>button:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-  }
+      &>button {
+        border-radius: 0;
+      }
 
-  &>a:not([aria-disabled='true']),
-  &>button:not(:disabled) {
+      &>a[aria-disabled='true'],
+      &>button:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
 
-    &:hover,
-    &:focus-visible {
-      outline: none;
-      background-color: var(--navbar-item-hover);
+      &>a:not([aria-disabled='true']),
+      &>button:not(:disabled) {
+
+        &:hover,
+        &:focus-visible {
+          outline: none;
+          background-color: var(--navbar-item-hover);
+        }
+      }
+
+      &>[aria-current='page'] {
+        background-color: var(--navbar-item-active);
+      }
     }
-  }
-
-  &>[aria-current='page'] {
-    background-color: var(--navbar-item-active);
-  }
-
-  &>hr {
-    border-left: none;
   }
 }
 
@@ -117,52 +134,47 @@ aside>nav {
     --nav-item-active: var(--palette-background-dark);
   }
 
-  display: inline-flex;
-  flex-direction: column;
-  align-items: stretch;
-
   border-right: 1px solid var(--nav-border);
 
-  &>hr {
-    border-color: var(--nav-divider);
-  }
+  &>ul>li {
+    &>hr {
+      --margin-horizontal: 1rem;
 
-  &> :not(hr) {
-    --padding-vertical: 0.375rem;
-    --padding-horizontal: 0.75rem;
-  }
-
-  &>a,
-  &>a:hover {
-    text-decoration: none;
-  }
-
-  &>a[aria-disabled='true'],
-  &>button:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-  }
-
-  &>a:not([aria-disabled='true']),
-  &>button:not(:disabled) {
-    &:hover {
-      color: var(--nav-foreground);
-      background-color: var(--nav-item-hover);
+      border-color: var(--nav-divider);
+      border-bottom: none;
     }
-  }
 
-  &>[aria-current='page'] {
-    background-color: var(--nav-item-active);
-  }
+    &> :not(hr) {
+      --padding-vertical: 0.375rem;
+      --padding-horizontal: 0.75rem;
+    }
 
-  &>hr {
-    --margin-horizontal: 1rem;
+    &>a,
+    &>a:hover {
+      text-decoration: none;
+    }
 
-    border-bottom: none;
-  }
+    &>a[aria-disabled='true'],
+    &>button:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
 
-  &>button {
-    text-align: left;
+    &>a:not([aria-disabled='true']),
+    &>button:not(:disabled) {
+      &:hover {
+        color: var(--nav-foreground);
+        background-color: var(--nav-item-hover);
+      }
+    }
+
+    &>[aria-current='page'] {
+      background-color: var(--nav-item-active);
+    }
+
+    &>button {
+      text-align: left;
+    }
   }
 }
 
