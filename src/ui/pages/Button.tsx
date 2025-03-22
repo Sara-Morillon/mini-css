@@ -9,6 +9,12 @@ export function Button() {
       <br />
       <br />
       <button aria-busy>Loading button</button>
+      <br />
+      <br />
+      <div role="group">
+        <button>Button</button>
+        <button>Group</button>
+      </div>
     </section>
   )
 }

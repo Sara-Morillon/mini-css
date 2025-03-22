@@ -50,3 +50,16 @@ button,
     }
   }
 }
+
+[role="group"] {
+  &>button:not(:first-of-type) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &>button:not(:last-of-type) {
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
